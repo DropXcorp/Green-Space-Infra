@@ -9,7 +9,6 @@ import {
   Flag,
   Handshake,
   Heart,
-  Linkedin,
   Leaf,
   ShieldCheck,
   Building,
