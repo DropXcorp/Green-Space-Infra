@@ -1,11 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Clock3, Mail, MapPin, Phone, Building, MapPinned, MessageSquare, ShieldCheck, CheckCircle2 } from "lucide-react";
-import PageHero from "@/components/page-hero";
+import { Clock3, Mail, MapPin, Phone, CheckCircle2 } from "lucide-react";
 import ContactForm from "@/components/contact-form";
-import { AnimatedSection, slideLeft, slideRight, fadeUp } from "@/components/motion-primitives";
-import { company } from "@/lib/site-data";
+import { AnimatedSection, slideLeft, slideRight } from "@/components/motion-primitives";
 
 const offices = [
   {
@@ -35,38 +33,9 @@ export default function ContactPage() {
   const [activeOffice, setActiveOffice] = useState(0);
 
   return (
-    <>
-      {/* RICH SPLIT HERO */}
-      <PageHero
-        eyebrow="GET IN TOUCH"
-        title="Start Your Next"
-        highlightedTitle="Landmark Project."
-        description="Whether you are planning a luxury residential community, commercial business park, or heavy transport infrastructure, our engineering and planning desks are ready to assist."
-        image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=88"
-        imageAlt="Green Space Infra Headquarters and Contact"
-        floatingBadge={{
-          icon: "map",
-          title: "3 Regional Offices Nationwide",
-          subtitle: "Hyderabad • Bengaluru • Pune",
-        }}
-        primaryAction={{
-          label: "Send an Inquiry",
-          href: "#inquiry-form",
-        }}
-        secondaryAction={{
-          label: "Call Desk: +91 40 1234 5678",
-          href: "tel:+914012345678",
-        }}
-        stats={[
-          { value: 3, suffix: " Hubs", label: "Regional Offices", icon: "map" },
-          { value: 24, suffix: "h", label: "Response Time", icon: "timer" },
-          { value: 100, suffix: "%", label: "Confidentiality", icon: "shield" },
-          { value: 30, suffix: "+", label: "Cities Covered", icon: "landmark" },
-        ]}
-      />
-
+    <div className="pt-28 pb-20 sm:pt-36 sm:pb-28">
       {/* MAIN CONTACT DETAILS & INTERACTIVE FORM */}
-      <section id="inquiry-form" className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+      <section id="inquiry-form" className="px-5 sm:px-8 lg:px-12">
         <div className="mx-auto grid w-full max-w-[1440px] gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           
           {/* LEFT: REGIONAL OFFICES & DIRECT CONTACTS */}
@@ -76,9 +45,9 @@ export default function ContactPage() {
               OFFICE LOCATIONS
             </div>
 
-            <h2 className="mt-4 font-[var(--font-playfair)] text-3xl font-semibold leading-[1.08] tracking-[-0.035em] text-[#111611] md:text-4xl">
+            <h1 className="mt-4 font-[var(--font-playfair)] text-3xl font-semibold leading-[1.08] tracking-[-0.035em] text-[#111611] md:text-4xl">
               Connect with Our Team Nationwide
-            </h2>
+            </h1>
             <p className="mt-3 text-xs leading-6 text-[#687068] sm:text-sm">
               Select an office location below or submit your project details directly via the enquiry form.
             </p>
@@ -162,45 +131,6 @@ export default function ContactPage() {
 
         </div>
       </section>
-
-      {/* HEADQUARTERS LOCATION MAP BANNER */}
-      <section className="px-5 pb-24 sm:px-8 lg:px-12">
-        <div className="mx-auto overflow-hidden rounded-[32px] border border-black/8 bg-[#111711] text-white shadow-xl">
-          <div className="grid lg:grid-cols-[1fr_1.5fr] lg:items-center">
-            <div className="p-8 sm:p-12">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#43a324]/20 px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-wider text-[#8bd46f]">
-                Corporate Headquarters
-              </div>
-              <h3 className="mt-4 font-[var(--font-playfair)] text-2xl font-semibold text-white sm:text-3xl">
-                Green Tower, Hyderabad
-              </h3>
-              <p className="mt-3 text-xs leading-6 text-white/60 sm:text-sm">
-                3rd Floor, Green Tower, Eco City, Gachibowli, Hyderabad, TG 500032
-              </p>
-              <div className="mt-6 flex flex-wrap gap-4 text-xs font-bold">
-                <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#43a324] px-5 py-2.5 text-white transition hover:bg-[#2f7f1d]"
-                >
-                  <MapPin size={14} /> Open in Google Maps
-                </a>
-              </div>
-            </div>
-
-            <div className="relative min-h-[280px] bg-[#1a251b] p-8 flex items-center justify-center border-t border-white/10 lg:border-t-0 lg:border-l">
-              <div className="text-center">
-                <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-[#43a324] text-white shadow-lg">
-                  <Building size={26} />
-                </div>
-                <p className="mt-3 text-sm font-extrabold text-white">Green Space Infra Corporate Tower</p>
-                <p className="text-xs text-white/50">Gachibowli Financial & Eco District, Hyderabad</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }
