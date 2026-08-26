@@ -28,8 +28,7 @@ export const navLinks = [
   { label: "About Us", href: "/about" },
   { label: "Expertise", href: "/services" },
   { label: "Projects", href: "/projects" },
-  { label: "Sustainability", href: "/sustainability" },
-  { label: "Insights", href: "/news-events" },
+  { label: "Sustainability", href: "/about#sustainability" },
   { label: "Contact", href: "/contact" },
 ];
 
