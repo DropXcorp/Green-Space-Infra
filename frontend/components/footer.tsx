@@ -2,140 +2,62 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { company, navLinks, services } from "@/lib/site-data";
-import { StaggerGroup, MotionItem } from "@/components/motion-primitives";
 
 const socials = [
-  {
-    href: "#",
-    label: "Facebook",
-    icon: (
-      <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-      </svg>
-    ),
-  },
-  {
-    href: "#",
-    label: "LinkedIn",
-    icon: (
-      <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-      </svg>
-    ),
-  },
-  {
-    href: "#",
-    label: "Instagram",
-    icon: (
-      <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-      </svg>
-    ),
-  },
-  {
-    href: "#",
-    label: "YouTube",
-    icon: (
-      <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-      </svg>
-    ),
-  },
+  { label: "LinkedIn", mark: "in" },
+  { label: "Instagram", mark: "ig" },
+  { label: "YouTube", mark: "▶" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f1a0f] text-white">
-      <div className="mx-auto w-full max-w-[1440px] px-5 py-16 sm:px-8 lg:px-12">
-        <StaggerGroup className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_.7fr_.9fr_1.1fr]">
-          <MotionItem>
-            <div className="relative h-[72px] w-[250px] rounded-xl bg-white px-2">
-              <Image src="/images/logo.png" alt="Green Space Infra" fill className="object-contain p-2" />
-            </div>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/50">{company.description}</p>
-            <div className="mt-6 flex gap-3">
-              {socials.map(({ href, label, icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-white/50 transition hover:border-[#43a324] hover:bg-[#43a324] hover:text-white"
-                >
-                  {icon}
-                </a>
-              ))}
-            </div>
-          </MotionItem>
+    <footer className="relative overflow-hidden bg-white text-[#202520]">
+      <div className="mx-auto grid w-full max-w-[1440px] gap-10 px-5 py-10 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.25fr_.7fr_.9fr_1.15fr] lg:px-12">
+        <div>
+          <div className="relative h-14 w-[230px]"><Image src="/images/logo.png" alt="Green Space Infra" fill sizes="230px" className="object-contain object-left" /></div>
+          <p className="mt-4 max-w-[280px] text-xs leading-6 text-[#5d645d]">We build sustainable infrastructure and spaces that inspire generations.</p>
+          <div className="mt-5 flex gap-3">
+            {socials.map(({ label, mark }) => <a key={label} href="#" aria-label={label} className="grid h-8 w-8 place-items-center rounded-full border border-black/15 text-[9px] font-extrabold transition hover:border-[#4da328] hover:bg-[#4da328] hover:text-white">{mark}</a>)}
+          </div>
+        </div>
 
-          <MotionItem>
-            <h3 className="text-sm font-extrabold uppercase tracking-wider">Quick Links</h3>
-            <div className="mt-5 grid gap-2.5">
-              {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="text-sm text-white/50 transition hover:text-[#72c653]">
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </MotionItem>
+        <div>
+          <h2 className="font-[var(--font-sans)] text-xs font-extrabold tracking-normal">Quick Links</h2>
+          <div className="mt-4 grid gap-2">
+            {navLinks.map((link) => <Link key={`${link.href}-${link.label}`} href={link.href} className="text-[11px] text-[#555c55] transition hover:text-[#4da328]">{link.label}</Link>)}
+          </div>
+        </div>
 
-          <MotionItem>
-            <h3 className="text-sm font-extrabold uppercase tracking-wider">Our Services</h3>
-            <div className="mt-5 grid gap-2.5">
-              {services.slice(0, 6).map((service) => (
-                <Link key={service.title} href="/services" className="text-sm text-white/50 transition hover:text-[#72c653]">
-                  {service.title}
-                </Link>
-              ))}
-            </div>
-          </MotionItem>
+        <div>
+          <h2 className="font-[var(--font-sans)] text-xs font-extrabold tracking-normal">Our Services</h2>
+          <div className="mt-4 grid gap-2">
+            {services.slice(0, 6).map((service) => <Link key={service.title} href="/services" className="text-[11px] text-[#555c55] transition hover:text-[#4da328]">{service.title}</Link>)}
+          </div>
+        </div>
 
-          <MotionItem>
-            <h3 className="text-sm font-extrabold uppercase tracking-wider">Contact Us</h3>
-            <div className="mt-5 grid gap-4 text-sm text-white/50">
-              <div className="flex gap-3">
-                <MapPin className="mt-0.5 shrink-0 text-[#72c653]" size={17} />
-                <span>{company.address}</span>
-              </div>
-              <div className="flex gap-3">
-                <Phone className="shrink-0 text-[#72c653]" size={17} />
-                <span>{company.phone}</span>
-              </div>
-              <div className="flex gap-3">
-                <Mail className="shrink-0 text-[#72c653]" size={17} />
-                <a href={`mailto:${company.email}`} className="hover:text-white">
-                  {company.email}
-                </a>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <h3 className="text-sm font-extrabold uppercase tracking-wider">Legal</h3>
-              <div className="mt-3 grid gap-2.5">
-                <Link href="#" className="text-sm text-white/50 transition hover:text-[#72c653]">
-                  Privacy Policy
-                </Link>
-                <Link href="#" className="text-sm text-white/50 transition hover:text-[#72c653]">
-                  Terms & Conditions
-                </Link>
-              </div>
-            </div>
-          </MotionItem>
-        </StaggerGroup>
+        <div className="relative">
+          <h2 className="font-[var(--font-sans)] text-xs font-extrabold tracking-normal">Contact Us</h2>
+          <div className="mt-4 grid gap-3 text-[11px] text-[#555c55]">
+            <p className="flex gap-3"><MapPin size={15} className="shrink-0 text-[#4da328]" />{company.address}</p>
+            <p className="flex items-center gap-3"><Phone size={15} className="text-[#4da328]" />{company.phone}</p>
+            <a href={`mailto:${company.email}`} className="flex items-center gap-3 hover:text-[#4da328]"><Mail size={15} className="text-[#4da328]" />{company.email}</a>
+          </div>
+          <Link href="/contact" className="group mt-5 inline-flex items-center gap-8 rounded-full border border-[#58ad31] px-5 py-2 text-[11px] font-bold text-[#4a9f27] transition hover:bg-[#4a9f27] hover:text-white">Let&apos;s Build Together <ArrowRight size={14} className="transition group-hover:translate-x-1" /></Link>
+        </div>
       </div>
 
-      <div className="border-t border-white/8">
-        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-3 px-5 py-5 text-xs text-white/40 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-12">
+      <div className="border-t border-black/8">
+        <div className="mx-auto flex max-w-[1440px] flex-col gap-2 px-5 py-4 text-[9px] text-[#697069] sm:px-8 md:flex-row md:items-center md:justify-between lg:px-12">
           <span>© {new Date().getFullYear()} Green Space Infra. All Rights Reserved.</span>
-          <div>
-            <span>Designed and Developed by </span>
-            <a
-              href="https://dropxcorp.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold text-[#72c653] transition hover:underline hover:text-white"
-            >
-              DropXcorp Pvt. Ltd
-            </a>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <span>
+              Designed and Developed by{" "}
+              <a href="https://dropxcorp.in/" target="_blank" rel="noopener noreferrer" className="font-bold text-[#4da328] transition hover:text-[#2f7f1d] hover:underline">
+                DropXcorp Pvt. Ltd.
+              </a>
+            </span>
+            <Link href="#" className="hover:text-[#4da328]">Privacy Policy</Link>
+            <Link href="#" className="hover:text-[#4da328]">Terms &amp; Conditions</Link>
           </div>
         </div>
       </div>
