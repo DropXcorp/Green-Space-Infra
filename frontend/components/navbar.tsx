@@ -49,7 +49,6 @@ export default function Navbar() {
           <Link href="/contact" className="inline-flex items-center gap-3 rounded-full bg-[#43a324] px-5 py-2.5 text-xs font-bold text-white shadow-[0_10px_25px_rgba(67,163,36,.18)] transition hover:-translate-y-0.5 hover:bg-[#2f7f1d]">
             Let&apos;s Build Green <ArrowRight size={15} />
           </Link>
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-black/20 bg-white" aria-hidden="true"><Menu size={18} /></span>
         </motion.div>
 
         <button type="button" onClick={() => setOpen((value) => !value)} className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-black/15 bg-white text-[#151715] lg:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>

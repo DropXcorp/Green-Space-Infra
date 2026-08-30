@@ -8,7 +8,7 @@ const initialForm = {
   name: "",
   email: "",
   phone: "",
-  subject: "",
+  subject: "Project Enquiry",
   message: "",
   website: "",
 };
@@ -78,8 +78,9 @@ export default function ContactForm() {
             />
           </label>
           <label className="text-sm font-bold text-[#343834]">
-            Phone
+            Phone number *
             <input
+              required
               name="phone"
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
@@ -89,15 +90,13 @@ export default function ContactForm() {
             />
           </label>
           <label className="text-sm font-bold text-[#343834]">
-            Subject
-            <input
+            Enquiry type *
+            <select
               name="subject"
               value={form.subject}
               onChange={(e) => setForm({ ...form, subject: e.target.value })}
               className={inputClass}
-              placeholder="Project enquiry"
-              maxLength={120}
-            />
+            >{["Project Enquiry", "Property Enquiry", "Partnership", "Vendor / Contractor", "General Enquiry"].map((type) => <option key={type}>{type}</option>)}</select>
           </label>
         </div>
 
@@ -138,9 +137,9 @@ export default function ContactForm() {
             className="inline-flex items-center justify-center gap-2 rounded-full bg-[#43a324] px-6 py-3.5 text-sm font-extrabold text-white transition hover:bg-[#2f7f1d] disabled:cursor-not-allowed disabled:opacity-60 shadow-[0_10px_25px_rgba(67,163,36,0.25)]"
           >
             {status === "sending" ? <Loader2 className="animate-spin" size={17} /> : <Send size={17} />}
-            {status === "sending" ? "Sending enquiry..." : "Send enquiry"}
+            {status === "sending" ? "Sending enquiry..." : "Send Enquiry →"}
           </button>
-          <span className="text-xs text-[#687068]">We usually respond within 24 business hours.</span>
+          <span className="text-xs text-[#687068]">Your details are used only to respond to this enquiry.</span>
         </div>
       </form>
 
@@ -184,22 +183,12 @@ export default function ContactForm() {
               </div>
 
               {/* Title & Message */}
-              <h3 className="mt-6 font-[var(--font-playfair)] text-2xl font-bold text-[#111711]">
-                Enquiry Sent Successfully!
-              </h3>
+              <h3 className="mt-6 font-[var(--font-playfair)] text-2xl font-bold text-[#111711]">Thank you. Your enquiry has been received.</h3>
 
               <p className="mt-3 text-sm leading-relaxed text-[#555e55]">
-                Thank you{submittedData?.name ? `, ${submittedData.name}` : ""}! Your message has been directly dispatched to our corporate office.
+                Thank you{submittedData?.name ? `, ${submittedData.name}` : ""}! We will review your requirement and get back to you.
               </p>
 
-              <div className="mt-5 rounded-2xl border border-[#43a324]/15 bg-[#f7faf6] p-4 text-xs text-[#425041]">
-                <p className="font-semibold text-[#2f7f1d] flex items-center justify-center gap-1.5">
-                  <Sparkles size={14} /> Quick Response Promise
-                </p>
-                <p className="mt-1 text-[#687068]">
-                  Our advisory team in Hyderabad will review your requirement and reach out to you shortly.
-                </p>
-              </div>
 
               {/* Action Button */}
               <div className="mt-7 flex flex-col gap-2.5">

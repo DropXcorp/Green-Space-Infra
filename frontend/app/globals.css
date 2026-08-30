@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  --font-sans: "Arial", "Helvetica Neue", sans-serif;
+  /* Legacy heading utility aliases to the navbar typeface for a single-font system. */
+  --font-playfair: var(--font-sans);
   --brand: #43a324;
   --brand-dark: #2f7f1d;
   --brand-light: #eef8eb;
@@ -30,8 +33,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), var(--font-sans), system-ui, sans-serif;
-  letter-spacing: -0.025em;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 /* Luxury Custom Scrollbar */
@@ -77,4 +80,19 @@ h1, h2, h3, h4, h5, h6 {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Home: keep the trust and responsible-development panels visually paired. */
+main > section:nth-of-type(7) .bg-white.p-7 {
+  background-color: #edf5e9;
+}
+
+/* The interactive homepage carousel replaces the legacy static hero kept in markup. */
+main:has(button[aria-label^="Show Green Space Infra"]) > section:nth-of-type(2) {
+  display: none;
+}
+
+/* Space direct page titles away from the first content divider. */
+main > section:first-of-type > h1 {
+  margin-bottom: 3rem;
 }

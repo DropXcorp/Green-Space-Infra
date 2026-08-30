@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { company } from "@/lib/site-data";
 
+const attempts = new Map<string, { count: number; reset: number }>();
+
 type ContactPayload = {
   name: string;
   email: string;
@@ -26,6 +28,10 @@ function escapeHtml(value: string) {
 
 export async function POST(request: Request) {
   try {
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0] ?? "unknown";
+    const now = Date.now(); const previous = attempts.get(ip);
+    if (previous && previous.reset > now && previous.count >= 5) return NextResponse.json({ error: "Too many enquiries. Please try again shortly." }, { status: 429 });
+    attempts.set(ip, { count: previous && previous.reset > now ? previous.count + 1 : 1, reset: now + 60_000 });
     const raw = (await request.json().catch(() => null)) as Partial<ContactPayload> | null;
 
     if (!raw) {
@@ -67,7 +73,7 @@ export async function POST(request: Request) {
     const smtpPass = process.env.SMTP_PASS;
     const smtpSecure = process.env.SMTP_SECURE === "true";
     const mailFrom = process.env.MAIL_FROM ?? smtpUser ?? "enquiries@greenspaceinfra.com";
-    const mailTo = process.env.MAIL_TO ?? company.email ?? "info@greenspaceinfra.com";
+    const mailTo = process.env.CONTACT_RECEIVER_EMAIL ?? process.env.MAIL_TO ?? company.email;
 
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
@@ -128,7 +134,7 @@ export async function POST(request: Request) {
         from: `"${safeName} via Green Space Infra" <${mailFrom}>`,
         to: mailTo,
         replyTo: email,
-        subject: `[Website Enquiry] ${subject} - from ${name}`,
+        subject: "New Green Space Infra Website Enquiry",
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`,
         html: emailHtml,
       });

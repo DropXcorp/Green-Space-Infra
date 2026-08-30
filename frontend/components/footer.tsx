@@ -1,66 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
-import { company, navLinks, services } from "@/lib/site-data";
+import { Mail, MapPin } from "lucide-react";
+import { company, navLinks } from "@/lib/site-data";
 
-const socials = [
-  { label: "LinkedIn", mark: "in" },
-  { label: "Instagram", mark: "ig" },
-  { label: "YouTube", mark: "▶" },
-];
-
-export default function Footer() {
-  return (
-    <footer className="relative overflow-hidden bg-white text-[#202520]">
-      <div className="mx-auto grid w-full max-w-[1440px] gap-10 px-5 py-10 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.25fr_.7fr_.9fr_1.15fr] lg:px-12">
-        <div>
-          <div className="relative h-14 w-[230px]"><Image src="/images/logo.png" alt="Green Space Infra" fill sizes="230px" className="object-contain object-left" /></div>
-          <p className="mt-4 max-w-[280px] text-xs leading-6 text-[#5d645d]">We build sustainable infrastructure and spaces that inspire generations.</p>
-          <div className="mt-5 flex gap-3">
-            {socials.map(({ label, mark }) => <a key={label} href="#" aria-label={label} className="grid h-8 w-8 place-items-center rounded-full border border-black/15 text-[9px] font-extrabold transition hover:border-[#4da328] hover:bg-[#4da328] hover:text-white">{mark}</a>)}
-          </div>
-        </div>
-
-        <div>
-          <h2 className="font-[var(--font-sans)] text-xs font-extrabold tracking-normal">Quick Links</h2>
-          <div className="mt-4 grid gap-2">
-            {navLinks.map((link) => <Link key={`${link.href}-${link.label}`} href={link.href} className="text-[11px] text-[#555c55] transition hover:text-[#4da328]">{link.label}</Link>)}
-          </div>
-        </div>
-
-        <div>
-          <h2 className="font-[var(--font-sans)] text-xs font-extrabold tracking-normal">Our Services</h2>
-          <div className="mt-4 grid gap-2">
-            {services.slice(0, 6).map((service) => <Link key={service.title} href="/services" className="text-[11px] text-[#555c55] transition hover:text-[#4da328]">{service.title}</Link>)}
-          </div>
-        </div>
-
-        <div className="relative">
-          <h2 className="font-[var(--font-sans)] text-xs font-extrabold tracking-normal">Contact Us</h2>
-          <div className="mt-4 grid gap-3 text-[11px] text-[#555c55]">
-            <p className="flex gap-3"><MapPin size={15} className="shrink-0 text-[#4da328]" />{company.address}</p>
-            <p className="flex items-center gap-3"><Phone size={15} className="text-[#4da328]" />{company.phone}</p>
-            <a href={`mailto:${company.email}`} className="flex items-center gap-3 hover:text-[#4da328]"><Mail size={15} className="text-[#4da328]" />{company.email}</a>
-          </div>
-          <Link href="/contact" className="group mt-5 inline-flex items-center gap-8 rounded-full border border-[#58ad31] px-5 py-2 text-[11px] font-bold text-[#4a9f27] transition hover:bg-[#4a9f27] hover:text-white">Let&apos;s Build Together <ArrowRight size={14} className="transition group-hover:translate-x-1" /></Link>
-        </div>
-      </div>
-
-      <div className="border-t border-black/8">
-        <div className="mx-auto flex max-w-[1440px] flex-col gap-2 px-5 py-4 text-[9px] text-[#697069] sm:px-8 md:flex-row md:items-center md:justify-between lg:px-12">
-          <span>© {new Date().getFullYear()} Green Space Infra. All Rights Reserved.</span>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <span>
-              Designed and Developed by{" "}
-              <a href="https://dropxcorp.in/" target="_blank" rel="noopener noreferrer" className="font-bold text-[#4da328] transition hover:text-[#2f7f1d] hover:underline">
-                DropXcorp Pvt. Ltd.
-              </a>
-            </span>
-            <Link href="#" className="hover:text-[#4da328]">Privacy Policy</Link>
-            <Link href="#" className="hover:text-[#4da328]">Terms &amp; Conditions</Link>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
+export default function Footer(){return <footer className="border-t border-black/10 bg-white text-[#171817]"><div className="mx-auto grid max-w-[1440px] gap-10 px-5 py-16 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.3fr_.7fr_.9fr_1fr] lg:px-12"><div><div className="relative h-14 w-[220px]"><Image src="/images/logo.png" alt="Green Space Infra" fill className="object-contain object-left"/></div><p className="mt-5 max-w-sm text-sm leading-7 text-[#596259]">{company.description}</p></div><div><h2 className="text-xs font-bold uppercase tracking-[.16em] text-[#32861f]">Quick Links</h2><div className="mt-5 grid gap-3">{navLinks.map(link=><Link className="text-sm text-[#596259] transition hover:text-[#32861f]" key={link.href} href={link.href}>{link.label}</Link>)}</div></div><div><h2 className="text-xs font-bold uppercase tracking-[.16em] text-[#32861f]">Expertise</h2><div className="mt-5 grid gap-3 text-sm text-[#596259]"><span>Property Development</span><span>Property Management</span><span>Construction</span><span>Environmental Management</span></div></div><div><h2 className="text-xs font-bold uppercase tracking-[.16em] text-[#32861f]">Contact</h2><div className="mt-5 grid gap-4 text-sm leading-6 text-[#596259]"><p className="flex gap-2"><MapPin size={17} className="shrink-0 text-[#43a324]"/>{company.shortAddress}</p><a className="flex gap-2 hover:text-[#32861f]" href={`mailto:${company.email}`}><Mail size={17} className="shrink-0 text-[#43a324]"/>{company.email}</a></div></div></div><div className="border-t border-black/10"><div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4 px-5 py-5 text-xs text-[#697069] sm:px-8 lg:px-12"><span>© Green Space Infra. All Rights Reserved.</span><div className="flex flex-wrap items-center gap-x-5 gap-y-2"><span>Designed and Developed by <a className="font-bold text-[#32861f] hover:underline" href="https://dropxcorp.in/" target="_blank" rel="noopener noreferrer">DropXcorp</a></span><Link href="#" className="hover:text-[#32861f]">Privacy Policy</Link><Link href="#" className="hover:text-[#32861f]">Terms</Link></div></div></div></footer>}
