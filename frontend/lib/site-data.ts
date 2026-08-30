@@ -1,34 +1,34 @@
 export type Project = {
   slug: string;
   title: string;
-  category: "Residential" | "Commercial" | "Infrastructure";
-  location: string;
-  status: "Completed" | "Ongoing" | "Upcoming";
-  year: string;
-  area: string;
+  category: "Residential Development" | "Group Venture";
+  location?: string;
+  status?: "Completed";
   image: string;
   description: string;
-  overview: string;
-  highlights: string[];
+  overview?: string;
+  highlights?: string[];
+  gallery: string[];
+  specifications?: string[];
 };
 
 export const company = {
   name: "Green Space Infra",
-  tagline: "Engineering Better Spaces. Enriching Lives.",
+  established: "2012",
+  tagline: "You Dream. We Build.",
   description:
-    "Green Space Infra delivers world-class real estate, infrastructure and construction solutions that inspire communities and create lasting value.",
-  phone: "+91 40 1234 5678",
-  email: "info@greenspaceinfra.com",
-  address: "3rd Floor, Green Tower, Eco City, Gachibowli, Hyderabad, TG 500032",
-  hours: "Monday - Saturday, 9:00 AM - 6:00 PM",
+    "Building thoughtfully planned real-estate developments through professional execution, responsible management and long-term value creation.",
+  email: "greenspaceinfra19@gmail.com",
+  address: "House No. 16-2-752/105 & 106, Flat No. 403, Hardhik Palace, SBH-C Colony, Saidabad, Hyderabad – 500059",
+  shortAddress: "Hyderabad",
 };
 
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Expertise", href: "/services" },
+  { label: "Expertise", href: "/expertise" },
   { label: "Projects", href: "/projects" },
-  { label: "Sustainability", href: "/about#sustainability" },
+  { label: "Sustainability", href: "/sustainability" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -78,126 +78,52 @@ export const services = [
   },
 ];
 
+export const expertise = [
+  { number: "01", title: "Property Acquisition & Development", description: "Identifying development opportunities and transforming them into thoughtfully planned real-estate projects with long-term value.", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85" },
+  { number: "02", title: "Property Management", description: "Professional property management focused on reliable operations, responsible administration and strong stakeholder relationships.", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85" },
+  { number: "03", title: "Property Acquisition & Construction", description: "Coordinated development and construction services covering planning, civil works, execution management and project delivery.", image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=85" },
+  { number: "04", title: "Environmental Management", description: "Integrating environmental responsibility and socially conscious practices into project planning and execution.", image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=85" },
+];
+
 export const projects: Project[] = [
   {
-    slug: "green-heaven-villas",
-    title: "Green Heaven Villas",
-    category: "Residential",
-    location: "Hyderabad",
+    slug: "green-space-residency",
+    title: "Green Space Residency",
+    category: "Residential Development",
     status: "Completed",
-    year: "2025",
-    area: "2.4 lakh sq. ft.",
     image:
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=88",
-    description: "Luxury villas crafted for modern living.",
-    overview:
-      "A benchmark residential sanctuary in Hyderabad featuring solar-powered energy grids, private gardens, and state-of-the-art home automation.",
-    highlights: [
-      "Solar-integrated power management",
-      "Private landscape decks & infinity pools",
-      "Gated community with 24/7 smart security",
-      "EV charging stations for every residence",
-    ],
+    description: "Residential development by Green Space Infra.", gallery: ["https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=88"],
   },
   {
-    slug: "vertex-business-park",
-    title: "Vertex Business Park",
-    category: "Commercial",
-    location: "Bengaluru",
-    status: "Ongoing",
-    year: "2026",
-    area: "1.8 lakh sq. ft.",
+    slug: "green-space-elite", title: "Green Space Elite", category: "Residential Development", status: "Completed",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=88",
-    description: "Smart workspaces for a dynamic future.",
-    overview:
-      "An IT & business complex designed for high efficiency, seamless transit access, double-glazed curtain walls, and LEED Gold certification standards.",
-    highlights: [
-      "LEED Gold certified green building",
-      "High-speed energy efficient smart elevators",
-      "Multi-tier basement parking with guidance system",
-      "Acoustically optimized floor plates",
-    ],
+    description: "Residential development by Green Space Infra.", gallery: ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=88"],
   },
   {
-    slug: "pure-ring-road-project",
-    title: "Pure Ring Road Project",
-    category: "Infrastructure",
-    location: "Pune",
-    status: "Ongoing",
-    year: "2026",
-    area: "42 km corridor",
+    slug: "green-space-lotus", title: "Green Space Lotus", category: "Residential Development", status: "Completed",
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=88",
-    description: "Building connectivity. Empowering lives.",
-    overview:
-      "A major civil infrastructure expressway package linking suburban nodes to core industrial zones with minimal ecological footprint.",
-    highlights: [
-      "6-lane elevated expressway design",
-      "Rainwater harvesting along entire median",
-      "Smart traffic monitoring sensors",
-      "Precast modular bridge construction",
-    ],
+    description: "Residential development by Green Space Infra.", gallery: ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=88"],
   },
   {
-    slug: "green-nest-residences",
-    title: "Green Nest Residences",
-    category: "Residential",
-    location: "Kolkata",
-    status: "Upcoming",
-    year: "2027",
-    area: "3.1 lakh sq. ft.",
+    slug: "green-space-orchid", title: "Green Space Orchid", category: "Residential Development", status: "Completed",
     image:
       "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1800&q=88",
-    description: "Modern living in the heart of the city.",
-    overview:
-      "A high-rise residential tower incorporating vertical gardens, passive cooling facades, and expansive community social spaces.",
-    highlights: [
-      "Vertical botanical gardens on facades",
-      "Zero-waste water recycling system",
-      "Sky lounge & wellness sanctuary",
-      "Seismic-resistant structural frame",
-    ],
+    description: "Residential development by Green Space Infra.", gallery: ["https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1800&q=88"],
   },
   {
-    slug: "eco-vista-villas",
-    title: "Eco Vista Villas",
-    category: "Residential",
-    location: "Goa",
-    status: "Completed",
-    year: "2024",
-    area: "90,000 sq. ft.",
+    slug: "green-space-jewel", title: "Green Space Jewel", category: "Residential Development", status: "Completed",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=88",
-    description: "Coastal sustainable villa enclave surrounded by nature.",
-    overview:
-      "Exclusive beachfront villas designed using indigenous stone, timber, and solar roof tiles for off-grid living.",
-    highlights: [
-      "Natural stone & timber architecture",
-      "Private infinity edge pools",
-      "Integrated solar roof systems",
-      "Zero net water discharge",
-    ],
+    description: "Residential development by Green Space Infra.", gallery: ["https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=88"],
   },
   {
-    slug: "prime-industrial-works",
-    title: "Prime Industrial Works",
-    category: "Infrastructure",
-    location: "Gujarat",
-    status: "Completed",
-    year: "2023",
-    area: "5.5 lakh sq. ft.",
+    slug: "green-space-comfort-i", title: "Green Space Comfort – I", category: "Residential Development",
     image:
       "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1800&q=88",
-    description: "Heavy engineering industrial complex and logistics park.",
-    overview:
-      "Industrial civil works including heavy load foundations, pre-engineered steel structures, and automated warehousing setup.",
-    highlights: [
-      "Heavy load slab engineering",
-      "Automated logistics dock bays",
-      "Comprehensive fire suppression systems",
-      "Solar rooftop power generation",
-    ],
+    description: "Residential development by Green Space Infra.", gallery: ["https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1800&q=88"],
   },
 ];
 
