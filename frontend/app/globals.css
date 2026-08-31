@@ -87,11 +87,6 @@ main > section:nth-of-type(7) .bg-white.p-7 {
   background-color: #edf5e9;
 }
 
-/* The interactive homepage carousel replaces the legacy static hero kept in markup. */
-main:has(button[aria-label^="Show Green Space Infra"]) > section:nth-of-type(2) {
-  display: none;
-}
-
 /* Space direct page titles away from the first content divider. */
 main > section:first-of-type > h1 {
   margin-bottom: 3rem;
