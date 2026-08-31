@@ -18,7 +18,7 @@ export default function ProjectsPage() {
         title="Spaces That Inspire."
         highlightedTitle="Landmarks That Endure."
         description="Explore our award-winning portfolio spanning luxury residential sanctuaries, future-ready commercial business parks, and heavy highway infrastructure."
-        image="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=88"
+        image="/images/buildings/project/jewel.png"
         imageAlt="Green Space Infra Projects Showcase"
         floatingBadge={{
           icon: "building2",

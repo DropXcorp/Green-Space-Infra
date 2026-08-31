@@ -252,7 +252,11 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="mt-7 grid gap-5 md:grid-cols-3">
-          {projects.slice(0, 3).map((project) => (
+          {projects
+            .filter(({ slug }) =>
+              ["green-space-elite", "green-space-lotus", "green-space-jewel"].includes(slug),
+            )
+            .map((project) => (
             <Link
               href={`/projects/${project.slug}`}
               key={project.slug}
