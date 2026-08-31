@@ -97,15 +97,13 @@ export const projects: Project[] = [
   },
   {
     slug: "green-space-elite", title: "Green Space Elite", category: "Residential Development", status: "Completed",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=88",
-    description: "Residential development by Green Space Infra.", gallery: ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=88"],
+    image: "/images/buildings/project/elite.png",
+    description: "Residential development by Green Space Infra.", gallery: ["/images/buildings/project/elite.png"],
   },
   {
     slug: "green-space-lotus", title: "Green Space Lotus", category: "Residential Development", status: "Completed",
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=88",
-    description: "Residential development by Green Space Infra.", gallery: ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=88"],
+    image: "/images/buildings/project/lotus.png",
+    description: "Residential development by Green Space Infra.", gallery: ["/images/buildings/project/lotus.png"],
   },
   {
     slug: "green-space-orchid", title: "Green Space Orchid", category: "Residential Development", status: "Completed",
@@ -115,9 +113,8 @@ export const projects: Project[] = [
   },
   {
     slug: "green-space-jewel", title: "Green Space Jewel", category: "Residential Development", status: "Completed",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=88",
-    description: "Residential development by Green Space Infra.", gallery: ["https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=88"],
+    image: "/images/buildings/project/jewel.png",
+    description: "Residential development by Green Space Infra.", gallery: ["/images/buildings/project/jewel.png"],
   },
   {
     slug: "green-space-comfort-i", title: "Green Space Comfort – I", category: "Residential Development",
