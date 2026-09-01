@@ -37,57 +37,57 @@ const serviceDetails = [
   {
     id: "residential",
     title: "Residential Development",
-    subtitle: "Creating sanctuaries designed for modern living, family comfort, and lasting architecture.",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85",
+    subtitle: "Planning and delivering well-designed apartment developments for comfortable, long-term living.",
+    image: "/images/buildings/project/jewel.png",
     deliverables: [
-      "Luxury Villa Enclaves & High-Rise Apartments",
-      "Integrated Gated Security & Clubhouse Amenities",
-      "Solar Power & Rainwater Catchment Grids",
-      "Acoustic & Thermal Insulation Systems",
+      "Apartment & Multi-Storey Residential Buildings",
+      "Quality Civil, Electrical & Plumbing Works",
+      "Common Area Facilities & Landscaping",
+      "Thoughtful Site Planning & Orientation",
     ],
   },
   {
-    id: "commercial",
-    title: "Commercial Development",
-    subtitle: "Future-ready IT parks, corporate towers, and retail hubs built for high performance.",
+    id: "property-management",
+    title: "Property Management",
+    subtitle: "Professional management of completed developments with reliable operations and stakeholder communication.",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85",
     deliverables: [
-      "LEED Certified Energy Efficient Workspaces",
-      "Flexible Column-Free Floor Plate Planning",
-      "High-Speed Smart Elevator Circulation",
-      "Multi-Tier Basement & Visitor Parking",
+      "Day-to-Day Property Administration",
+      "Facility Maintenance & Vendor Coordination",
+      "Resident & Stakeholder Communication",
+      "Accounts & Documentation Management",
     ],
   },
   {
-    id: "infrastructure",
-    title: "Infrastructure Development",
-    subtitle: "Heavy civil infrastructure connecting regions, industrial parks, and urban corridors.",
+    id: "construction",
+    title: "Construction Services",
+    subtitle: "Coordinated civil and construction works delivered with structured quality and site management.",
     image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=85",
     deliverables: [
-      "Expressway & Highway Civil Packages",
-      "Precast Concrete Modular Bridge Erection",
-      "Site Drainage & Underground Utilities",
-      "Industrial Logistics & Foundation Works",
+      "Civil Engineering & Structural Works",
+      "Masonry, Carpentry & Finishing Trades",
+      "Electrical, Plumbing & MEP Services",
+      "Site Coordination & Safety Management",
     ],
   },
   {
     id: "management",
     title: "Project Management & Renovation",
-    subtitle: "Turnkey project management, site safety, vendor management, and structural renovation.",
+    subtitle: "Structured project management, cost tracking, quality monitoring and renovation works.",
     image: "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1400&q=85",
     deliverables: [
-      "BIM 3D Model Construction Coordination",
-      "Strict On-Site Quality Checkpoints",
-      "Milestone-Led Financial & Schedule Control",
-      "Retrofitting & Structural Upgrades",
+      "Project Planning & Schedule Management",
+      "On-Site Quality Checks & Supervision",
+      "Cost Monitoring & Financial Coordination",
+      "Structural Renovation & Retrofitting",
     ],
   },
 ];
 
 const techItems = [
-  { icon: Layers, title: "BIM 3D Modeling", desc: "Clash detection and 3D architectural modeling before pouring concrete." },
-  { icon: Cpu, title: "Drone Site Surveillance", desc: "Weekly aerial topographic scans & volumetric earthwork verification." },
-  { icon: ShieldCheck, title: "Smart Quality Sensors", desc: "Real-time concrete maturity and curing temperature sensors." },
+  { icon: Layers, title: "Structured Project Planning", desc: "Detailed scheduling and coordination across civil, MEP and finishing trades for smooth site execution." },
+  { icon: Cpu, title: "Site Supervision", desc: "Regular site inspections and quality checks to maintain workmanship and safety standards throughout the build." },
+  { icon: ShieldCheck, title: "Quality & Cost Control", desc: "Milestone-based tracking of project costs, materials and timelines to ensure responsible delivery." },
 ];
 
 export default function ServicesPage() {
@@ -97,30 +97,30 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="OUR EXPERTISE"
+        eyebrow="OUR SERVICES"
         title="End-to-End Solutions."
-        highlightedTitle="Built to Perfection."
-        description="From architectural conception to civil engineering, structural execution, and project handover, we deliver unified real estate & infrastructure excellence."
+        highlightedTitle="Built with Care."
+        description="From site planning to project handover, Green Space Infra brings together residential development, construction, property management and environmental management under one experienced team."
         image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=88"
         imageAlt="Green Space Infra Engineering Services"
         floatingBadge={{
           icon: "shield",
-          title: "ISO 9001:2015 Certified",
-          subtitle: "Zero-Compromise Quality Standard",
+          title: "Since 2012",
+          subtitle: "Established in Hyderabad, Telangana",
         }}
         primaryAction={{
-          label: "Explore Capabilities",
+          label: "Explore Our Services",
           href: "#services-grid",
         }}
         secondaryAction={{
-          label: "Consult an Engineer",
+          label: "Get in Touch",
           href: "/contact",
         }}
         stats={[
-          { value: 6, suffix: " Core", label: "Specialized Domains", icon: "layers" },
-          { value: 100, suffix: "%", label: "On-Time Handover", icon: "timer" },
-          { value: 15, suffix: "+", label: "Years Experience", icon: "sparkles" },
-          { value: 0, suffix: " Incidents", label: "Safety Record", icon: "shield" },
+          { value: 4, suffix: "", label: "Core Competencies", icon: "layers" },
+          { value: 5, suffix: "", label: "Completed Projects", icon: "building2" },
+          { value: 14, suffix: "+ Yrs", label: "Industry Experience", icon: "sparkles" },
+          { value: 75, suffix: " Yrs", label: "Combined Team Experience", icon: "users" },
         ]}
       />
 
@@ -129,10 +129,10 @@ export default function ServicesPage() {
         <div className="mx-auto w-full max-w-[1440px]">
           <AnimatedSection variants={fadeUp} className="text-center">
             <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#43a324]">
-              Interactive Showcase
+              What We Do
             </p>
             <h2 className="mt-3 font-[var(--font-playfair)] text-3xl font-semibold text-[#111611] sm:text-4xl">
-              Explore Our Core Capabilities
+              Our Core Services
             </h2>
           </AnimatedSection>
 
@@ -167,7 +167,7 @@ export default function ServicesPage() {
                 <div className="flex flex-col justify-between p-8 sm:p-12 lg:p-14">
                   <div>
                     <span className="rounded-full bg-[#eef8eb] px-3.5 py-1.5 text-[11px] font-extrabold text-[#43a324]">
-                      Featured Domain
+                      Our Service
                     </span>
                     <h3 className="mt-5 font-[var(--font-playfair)] text-3xl font-semibold text-[#111611] sm:text-4xl">
                       {currentDetail.title}
@@ -215,10 +215,10 @@ export default function ServicesPage() {
         <div className="mx-auto w-full max-w-[1440px]">
           <AnimatedSection variants={fadeUp} className="text-center">
             <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#79cc5b]">
-              Engineering Innovation
+              Our Approach
             </p>
             <h2 className="mt-3 font-[var(--font-playfair)] text-3xl font-semibold sm:text-4xl">
-              Advanced Technology We Deploy on Site
+              How We Deliver Every Project
             </h2>
           </AnimatedSection>
 
