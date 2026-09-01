@@ -90,7 +90,7 @@ function HeroCarousel() {
   }, []);
   const image = heroImages[active];
   return (
-    <section className="relative mt-[78px] min-h-[690px] overflow-hidden bg-white lg:h-[720px]">
+    <section className="relative mt-[78px] min-h-[560px] overflow-hidden bg-white lg:h-[620px]">
       <Image
         key={image.image}
         src={image.image}
@@ -101,7 +101,7 @@ function HeroCarousel() {
         className="object-cover object-[58%_center] transition-opacity duration-700"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_25%,rgba(255,255,255,.67)_39%,rgba(255,255,255,.1)_59%,rgba(255,255,255,0)_72%)]" />
-      <div className="relative z-10 mx-auto flex h-full min-h-[690px] max-w-[1440px] items-center px-5 pb-16 sm:px-8 lg:px-12">
+      <div className="relative z-10 mx-auto flex h-full min-h-[560px] max-w-[1440px] items-center px-5 pb-10 sm:px-8 lg:px-12">
         <div className="max-w-[520px]">
           <p className="text-xs font-bold uppercase tracking-wide text-[#469c23]">
             Shaping sustainable futures
@@ -173,7 +173,7 @@ export default function HomePage() {
             <GreenButton href="/about">Our Story</GreenButton>
           </div>
         </div>
-        <div className="relative aspect-[2/3] w-full max-w-[350px] justify-self-center overflow-hidden rounded-xl lg:justify-self-end">
+        <div className="relative aspect-[1.55] w-full overflow-hidden rounded-xl bg-[#1b2a1b]">
           <Image
             src={homePageBuilding}
             alt="Green Space residential development"
@@ -254,7 +254,7 @@ export default function HomePage() {
         <div className="mt-7 grid gap-5 md:grid-cols-3">
           {projects
             .filter(({ slug }) =>
-              ["green-space-elite", "green-space-lotus", "green-space-jewel"].includes(slug),
+              ["green-space-residency", "green-space-elite", "green-space-lotus", "green-space-jewel"].includes(slug),
             )
             .map((project) => (
             <Link

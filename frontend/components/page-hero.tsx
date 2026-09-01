@@ -104,8 +104,8 @@ export default function PageHero({
       <div className="pointer-events-none absolute -right-32 -top-32 h-[520px] w-[520px] rounded-full bg-[#43a324]/8 blur-3xl" />
       <div className="pointer-events-none absolute -left-20 top-40 h-80 w-80 rounded-full bg-[#43a324]/5 blur-3xl" />
 
-      <div className="mx-auto w-full max-w-[1600px] px-5 py-14 sm:px-8 lg:px-12 lg:py-20 xl:px-20">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center xl:grid-cols-[0.95fr_1.05fr]">
+      <div className="mx-auto w-full max-w-[1600px] px-5 py-9 sm:px-8 lg:px-12 lg:py-12 xl:px-20">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center xl:grid-cols-[0.95fr_1.05fr]">
           
           {/* LEFT CONTENT COLUMN */}
           <div className="relative z-10 max-w-2xl">
@@ -163,7 +163,7 @@ export default function PageHero({
           <AnimatedSection variants={slideRight} delay={0.15}>
             <div className="relative">
               {/* Outer Decorative Border Ring */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[32px] border border-black/8 bg-white p-2 shadow-[0_24px_70px_rgba(20,32,18,.12)] sm:aspect-[16/11]">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[32px] border border-black/8 bg-white p-2 shadow-[0_24px_70px_rgba(20,32,18,.12)]">
                 <div className="relative h-full w-full overflow-hidden rounded-[24px]">
                   <Image
                     src={image}
@@ -211,7 +211,7 @@ export default function PageHero({
         {/* BOTTOM FLOATING STATS BAR (IF PROVIDED) */}
         {stats && stats.length > 0 && (
           <AnimatedSection variants={fadeUp} delay={0.35}>
-            <div className="relative z-20 mt-14 rounded-[24px] border border-black/6 bg-white p-4 shadow-[0_20px_60px_rgba(20,32,18,.09)] sm:p-5">
+            <div className="relative z-20 mt-9 rounded-[24px] border border-black/6 bg-white p-4 shadow-[0_20px_60px_rgba(20,32,18,.09)] sm:p-5">
               <div className="grid grid-cols-2 divide-x divide-y divide-black/8 sm:divide-y-0 lg:grid-cols-4">
                 {stats.map((st) => {
                   const Icon = (st.icon && iconMap[st.icon]) || Sparkles;
